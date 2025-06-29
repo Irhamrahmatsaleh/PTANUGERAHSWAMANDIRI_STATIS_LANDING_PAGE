@@ -40,13 +40,13 @@ const socialLinks = [
   },
   {
     icon: <FaInstagram className="text-2xl" />,
-    url: "https://instagram.com/",
+    url: "#",
     label: "Instagram",
     color: "hover:text-pink-500",
   },
   {
     icon: <FaGlobeAsia className="text-2xl" />,
-    url: "https://www.ptanugerahswa.com/",
+    url: "#",
     label: "Website",
     color: "hover:text-emerald-700",
   },
