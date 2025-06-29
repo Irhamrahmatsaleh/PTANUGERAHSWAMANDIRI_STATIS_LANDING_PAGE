@@ -18,7 +18,7 @@ const products = [
   {
     name: "Rempah-rempah Nusantara",
     desc: "Cengkeh, kayu manis, pala, dan rempah eksotis lainnya. Dijamin segar & berkualitas.",
-    img: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=500&q=80",
+    img: "https://kompaspedia.kompas.id/wp-content/uploads/2024/05/Rempah-00_20130819RON60.jpg",
   },
   {
     name: "Kelapa & Turunannya",
