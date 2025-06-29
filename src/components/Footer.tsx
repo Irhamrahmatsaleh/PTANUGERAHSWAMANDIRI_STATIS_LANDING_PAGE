@@ -113,11 +113,11 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 1.1 }}
         >
-          {footerLinks.map((group, idx) => (
+          {footerLinks.map((group) => (
             <div key={group.title}>
               <div className="font-bold text-white text-lg mb-3 tracking-wide">{group.title}</div>
               <ul>
-                {group.links.map((link, idl) => (
+                {group.links.map((link) => (
                   <li key={link.label} className="mb-2">
                     <a
                       href={link.url}
