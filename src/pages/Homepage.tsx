@@ -1,49 +1,51 @@
-import { motion } from "framer-motion"; // Import animasi Framer Motion
-import Navbar from "../components/Navbar"; // Import Navbar custom
+import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-// Footer jangan diimport dulu
+// import Footer from "../components/Footer"; // Footer jangan diimport dulu
 
-const productVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.2 + i * 0.2, duration: 0.7, type: "spring" }
-  }),
-}; // Variasi animasi produk
-
+// Data produk dengan gambar URL yang benar
 const products = [
   {
     name: "Kopi Arabika Premium",
     desc: "Dikurasi dari pegunungan terbaik Indonesia. Kualitas ekspor, aroma dan rasa juara dunia.",
-    img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80", // Kopi arabika, closeup biji kopi
+    img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80",
   },
   {
     name: "Biji Kakao Pilihan",
     desc: "Biji kakao super untuk pasar Eropa dan Asia. Siap ekspor dalam jumlah besar.",
-    img: "https://media.istockphoto.com/id/1406207995/id/foto/kakao-dengan-potongan-cokelat-dan-bubuk-cokelat-di-atas-meja.jpg?s=612x612&w=0&k=20&c=RsB_udSBPZvn_w-pOzfNDzeZ43Otmf6e7m5JsQkw-K4=", // Biji kakao dan buah kakao
+    img: "https://media.istockphoto.com/id/1406207995/id/foto/kakao-dengan-potongan-cokelat-dan-bubuk-cokelat-di-atas-meja.jpg?s=612x612&w=0&k=20&c=RsB_udSBPZvn_w-pOzfNDzeZ43Otmf6e7m5JsQkw-K4=",
   },
   {
     name: "Rempah-rempah Nusantara",
     desc: "Cengkeh, kayu manis, pala, dan rempah eksotis lainnya. Dijamin segar & berkualitas.",
-    img: "https://kompaspedia.kompas.id/wp-content/uploads/2024/05/Rempah-00_20130819RON60.jpg", // Rempah-rempah (beragam: kayu manis, cengkeh, pala)
+    img: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=500&q=80",
   },
   {
     name: "Kelapa & Turunannya",
     desc: "Kelapa utuh, kopra, minyak kelapa murni dan produk turunannya. Siap kirim ke seluruh dunia.",
-    img: "https://images.pexels.com/photos/1424457/pexels-photo-1424457.jpeg?_gl=1*1wluad7*_ga*MTc4OTQ5MTgwNy4xNzUxMTY1NDA4*_ga_8JE65Q40S6*czE3NTExNjU0MDckbzEkZzEkdDE3NTExNjU0MTQkajUzJGwwJGgw", // Kelapa utuh, natural
+    img: "https://images.pexels.com/photos/1424457/pexels-photo-1424457.jpeg",
   },
 ];
-// Data produk unggulan
 
+// Animasi produk - Fixed TypeScript error
+const productVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.2 + custom * 0.2, duration: 0.7, type: "spring" as const }
+  }),
+};
+
+// Animasi benefit - Fixed TypeScript error
 const benefitVariants = {
   hidden: { opacity: 0, x: -40 },
-  visible: (i: number) => ({
+  visible: (custom: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: 0.4 + i * 0.2, duration: 0.6, type: "spring" }
+    transition: { delay: 0.4 + custom * 0.2, duration: 0.6, type: "spring" as const }
   }),
-}; // Variasi animasi benefit
+};
 
 const benefits = [
   {
@@ -66,14 +68,12 @@ const benefits = [
     title: "Harga Kompetitif",
     desc: "Penawaran harga terbaik untuk importir dan eksportir skala besar.",
   },
-]; // Data benefit
+];
 
 const Homepage = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-green-100 via-lime-300 to-emerald-200 relative overflow-x-hidden">
-      {/* Navbar */}
       <Navbar />
-      {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 flex flex-col items-center text-center select-none">
         <motion.h1
           className="text-4xl md:text-6xl font-black text-green-800 drop-shadow-xl mb-4 leading-tight"
@@ -197,7 +197,7 @@ const Homepage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="italic text-green-800 mb-3">"Harga bersaing dan layanan konsultasi sangat responsif. Rekomendasi untuk importir pemula!”</div>
+            <div className="italic text-green-800 mb-3">"Harga bersaing dan layanan konsultasi sangat responsif. Rekomendasi untuk importir pemula!"</div>
             <div className="font-bold text-green-900">— Siti, Malaysia</div>
           </motion.div>
         </div>
@@ -225,4 +225,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage; // Export komponen Homepage
+export default Homepage;
